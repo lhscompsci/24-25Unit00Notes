@@ -1,5 +1,11 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+
+
 public class Primary {
-    public static void main(String[] args) {    //start of main method
+    public static void main(String[] args) throws FileNotFoundException {    //start of main method
         System.out.print("G'mornin, All Saints!");  //this line does something
         System.out.println(" How is everyone this morning?");
 
@@ -40,6 +46,30 @@ public class Primary {
             // 1 boolean: true, false
 
 
+        // Input
+        // Scanner object in the Java util library
+        Scanner kb = new Scanner(System.in);
+        System.out.print("Please enter your favorite number: ");
+        int answer = kb.nextInt();
+        System.out.print("What is your first name? ");
+        kb.nextLine();
+        String name = kb.nextLine();
+
+        System.out.print("Please enter 3 real numbers: ");
+        double a1 = kb.nextDouble();
+        double a2 = kb.nextDouble();
+        double a3 = kb.nextDouble();
+
+        Scanner infile = new Scanner(new File("data.txt"));
+        double b1 = infile.nextDouble();
+
+        double b2 = infile.nextDouble();
+        double b3 = infile.nextDouble();
+        double avg = (b1 + b2 + b3) / 3;
+        System.out.println( avg );
+        infile.close();
+
+        System.out.println(name + ", your number was "+answer + ".");
 
         // single line comment
 
